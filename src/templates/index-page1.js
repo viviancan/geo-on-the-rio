@@ -5,17 +5,13 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
-import globe from '../../public/img/class.jpg'
 
-
-export const IndexPageTemplate = ({
+export const IndexPageTemplate1 = ({
   image,
-  title,
   heading,
   mainpitch,
   description,
   intro,
-  main,
 }) => (
     <div>
         <div
@@ -54,33 +50,18 @@ export const IndexPageTemplate = ({
     </div>
   <section className="section section--gradient">
     <div className="container">
-
       <div className="section">
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <div className="content">
-
-              <div className="columns">
-
-                <div className="column is-6">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
+              <div className="content">
+                <div className="tile">
+                  <h1 className="title">{mainpitch.title}</h1>
                 </div>
-
-                <div className="column is-6"> 
-                    <figure className="image">
-                      <img src={globe}/>
-                    </figure>
+                <div className="tile">
+                  <h3 className="subtitle">{mainpitch.description}</h3>
                 </div>
-
-
               </div>
-
-{/* 
               <div className="columns">
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
@@ -88,13 +69,13 @@ export const IndexPageTemplate = ({
                   </h3>
                   <p>{description}</p>
                 </div>
-              </div> */}
-
-
-
-              {/* <Features gridItems={intro.blurbs} /> */}
+              </div>
+              <Features gridItems={intro.blurbs} />
               <div className="columns">
               <div className="column is-12 has-text-centered">
+                <Link className="btn" to="/products">
+                  See all products
+                </Link>
                 </div>
               </div>
               <div className="column is-12">
@@ -117,7 +98,7 @@ export const IndexPageTemplate = ({
   </div>
 )
 
-IndexPageTemplate.propTypes = {
+IndexPageTemplate1.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -130,13 +111,11 @@ IndexPageTemplate.propTypes = {
 }
 
 const IndexPage = ({ data }) => {
-  console.log("index page")
-  console.log(data)
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <IndexPageTemplate
+      <IndexPageTemplate1
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -160,7 +139,7 @@ IndexPage.propTypes = {
 export default IndexPage
 
 export const pageQuery = graphql`
-query IndexPageTemplate {
+query IndexPageTemplate1 {
   markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
       frontmatter {
         title
@@ -173,13 +152,6 @@ query IndexPageTemplate {
         }
         heading
         mainpitch {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }          
           title
           description
         }
