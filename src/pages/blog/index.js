@@ -17,17 +17,24 @@ export default class BlogIndexPage extends React.Component {
                 }}
               >
                 <h1
-                  className="has-text-weight-bold is-size-1"
+                  className="has-text-weight-bold has-text-centered is-size-1"
                   style={{
                     boxShadow: "0.5rem 0 0 #1F6492, -0.5rem 0 0 #1F6492",
                     backgroundColor: "#1F6492",
                     color: "white",
-                    padding: "1rem"
+                    padding: "1rem",
+                    fontFamily: "Montserrat, sans-serif"
                   }}
                 >
                   Around the World
                 </h1>
               </div>
+            </div>
+
+            <div className="content">
+              <p>
+                <h4>Around the World is a project...</h4> where text text here
+              </p>
             </div>
             <BlogRoll />
           </div>
