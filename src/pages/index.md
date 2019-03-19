@@ -12,7 +12,7 @@ mainpitch:
   image: /img/class-pic.jpg
   title: Geo On The Rio
   description: >
-    Student description here
+    Welcome message here
 intro:
   blurbs:
     - image: /img/coffee.png
