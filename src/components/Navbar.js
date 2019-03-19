@@ -1,28 +1,28 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import geologohor from '../img/geo-horizontal.svg'
+import React from "react";
+import { Link } from "gatsby";
+import geologohor from "../img/geo-horizontal.svg";
 
 const Navbar = class extends React.Component {
   componentDidMount() {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
-      document.querySelectorAll('.navbar-burger'),
+      document.querySelectorAll(".navbar-burger"),
       0
-    )
+    );
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
       // Add a click event on each of them
       $navbarBurgers.forEach(el => {
-        el.addEventListener('click', () => {
+        el.addEventListener("click", () => {
           // Get the target from the "data-target" attribute
-          const target = el.dataset.target
-          const $target = document.getElementById(target)
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
 
           // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-          el.classList.toggle('is-active')
-          $target.classList.toggle('is-active')
-        })
-      })
+          el.classList.toggle("is-active");
+          $target.classList.toggle("is-active");
+        });
+      });
     }
   }
 
@@ -36,7 +36,11 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={geologohor} alt="Geo on the Rio" style={{ width: '200px', maxHeight: '5rem' }} />
+              <img
+                src={geologohor}
+                alt="Geo on the Rio"
+                style={{ width: "200px", maxHeight: "5rem" }}
+              />
             </Link>
             {/* Hamburger menu */}
             <div className="navbar-burger burger" data-target="navMenu">
@@ -47,6 +51,9 @@ const Navbar = class extends React.Component {
           </div>
           <div id="navMenu" className="navbar-menu">
             <div className="navbar-start has-text-centered">
+              <Link className="navbar-item" to="/">
+                Home
+              </Link>
               <Link className="navbar-item" to="/blog">
                 Blog
               </Link>
@@ -57,8 +64,8 @@ const Navbar = class extends React.Component {
           </div>
         </div>
       </nav>
-    )
+    );
   }
-}
+};
 
-export default Navbar
+export default Navbar;
