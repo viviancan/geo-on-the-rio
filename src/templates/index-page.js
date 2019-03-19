@@ -24,7 +24,6 @@ export const IndexPageTemplate = ({
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
         backgroundAttachment: `fixed`
       }}
     >
@@ -68,16 +67,18 @@ export const IndexPageTemplate = ({
                     </div>
                   </div>
 
-                  <div
-                    className="is-size-six"
-                    style={{
-                      backgroundImage: `url(${
-                        classPic.childImageSharp
-                          ? classPic.childImageSharp.fluid.src
-                          : classPic
-                      })`
-                    }}
-                  />
+                  <div className="column is-6">
+                    <div
+                      className="cus-responsive-image"
+                      style={{
+                        backgroundImage: `url(${
+                          classPic.childImageSharp
+                            ? classPic.childImageSharp.fluid.src
+                            : classPic
+                        })`
+                      }}
+                    />
+                  </div>
                 </div>
 
                 {/* 
@@ -95,9 +96,7 @@ export const IndexPageTemplate = ({
                   <div className="column is-12 has-text-centered" />
                 </div>
                 <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
+                  <h3 className="title">Latest stories</h3>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/blog">
