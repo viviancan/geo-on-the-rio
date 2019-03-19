@@ -12,7 +12,7 @@ mainpitch:
   image: /img/class-pic.jpg
   title: Geo On The Rio
   description: >
-    Welcome message here
+    DESCRIPTION MESSAGE >> Velit magna incididunt labore excepteur cupidatat ex culpa id mollit dolor dolor reprehenderit ex. Occaecat nisi sunt nisi nisi consectetur irure ullamco amet nostrud incididunt amet. Qui consequat quis do ea in consequat eiusmod proident tempor quis incididunt non nisi.
 intro:
   blurbs:
     - image: /img/coffee.png

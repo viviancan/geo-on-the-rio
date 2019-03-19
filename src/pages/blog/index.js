@@ -7,7 +7,7 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <section className="section">
+        <section className="section" style={{ paddingTop: "0rem" }}>
           <div className="container">
             <div className="content">
               <div
@@ -26,15 +26,17 @@ export default class BlogIndexPage extends React.Component {
                     fontFamily: "Montserrat, sans-serif"
                   }}
                 >
-                  Around the World
+                  Class Thoughts
                 </h1>
               </div>
             </div>
 
             <div className="content">
-              <p>
-                <h4>Around the World is a project...</h4> where text text here
-              </p>
+              <h4>Blog info...</h4> Enim ad culpa elit elit adipisicing nostrud.
+              Dolore anim elit laborum nisi laboris qui eu fugiat minim elit
+              amet tempor. Laborum nostrud nulla consequat consequat quis cillum
+              ex tempor. Ad pariatur nostrud elit nulla aute. Excepteur dolor
+              consectetur culpa aliqua pariatur eiusmod consequat labore nisi.
             </div>
             <BlogRoll />
           </div>
